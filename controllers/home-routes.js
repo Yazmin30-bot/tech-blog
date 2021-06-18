@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const Post = require('../models/Post');
+const withAuth = require('../utils/auth');
+
 
 // route to get all dishes
 router.get('/', async (req, res) => {
