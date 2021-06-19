@@ -1,0 +1,15 @@
+{{#each posts as |post|}}
+<div class="dish col-md-5">
+  <p>
+    {{post.id}}.
+    {{post.title}}
+  </p>
+</div>
+<div class="col-md-7">
+  <p>
+    Guest:
+    {{post.content}}
+  </p>
+</div>
+{{/each}}
+</div>
