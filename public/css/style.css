@@ -113,6 +113,10 @@
     background-color: var(--light);
     color: var(--dark);
   }
+
+  .card {
+    min-height: auto;
+  }
   
   .menu-card {
     margin: 50px;
@@ -160,7 +164,7 @@
   .container {
     display: flex;
     flex-flow: column wrap;
-    align-content: center;
+   /*  align-content: center; */
     /* align-items: center; */
   }
 
