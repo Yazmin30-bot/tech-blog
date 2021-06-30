@@ -12,7 +12,7 @@
       });
   
       if (response.ok) {
-        document.location.replace('/post');
+        document.location.replace('/createpost');
       } else {
         alert(response.statusText);
       }
