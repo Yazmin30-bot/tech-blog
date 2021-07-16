@@ -19,11 +19,6 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
-    comment: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -36,6 +31,8 @@ Post.init(
         key: 'id',
       },
     },
+
+
   },
   {
     sequelize,
