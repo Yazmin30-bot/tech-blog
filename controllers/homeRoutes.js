@@ -2,8 +2,6 @@ const router = require('express').Router();
 const {Post, User} = require('../models');
 const withAuth = require('../utils/auth');
 
-
-
 router.get('/', async (req, res) => {
   try {
     // Get all post and JOIN with user data
@@ -49,7 +47,6 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
 router.get('/post', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -68,7 +65,6 @@ router.get('/post', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.get('/createpost', withAuth, async (req, res) => {
   try {
@@ -98,7 +94,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
 
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route

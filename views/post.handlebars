@@ -1,8 +1,24 @@
-<div class="text-center">
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Created by {{user.username}} </p>
-  <p>
-    <button class="btn btn-primary">Fund this Post!</button>
-  </p>
-</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Edit Post:</h3>
+    <form class="form new-post-form post-list">
+      <div class="form-group">
+        <label for="post-title">post title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" value={{title}} />
+      </div>
+      <div class="form-group">
+        <label for="post-cont">content:</label>
+        <textarea class="form-input" id="post-cont" name="post-cont" >{{content}}</textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+      </div>
+    </form>
+  </div>
+
+</div> 
+
+
+<script src="/js/editpost.js"></script>
