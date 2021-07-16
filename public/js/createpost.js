@@ -9,7 +9,7 @@ const newPost = async(event) => {
 
 
 
-const delButtonHandler = async (event) => {
+/* const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -23,7 +23,7 @@ const delButtonHandler = async (event) => {
       alert('Failed to delete title');
     }
   }
-};
+}; */
 
 
 document
@@ -32,6 +32,6 @@ document
 
 
 
-  document
+ /*  document
   .querySelector('.post-list')
-  .addEventListener('click', delButtonHandler);  
+  .addEventListener('click', delButtonHandler);   */

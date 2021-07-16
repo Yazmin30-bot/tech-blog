@@ -5,17 +5,19 @@
     <form class="form new-post-form post-list">
       <div class="form-group">
         <label for="post-title">post title:</label>
-        <input class="form-input" type="text" id="post-title" name="post-title" value={{title}} />
+        <input class="form-input" type="text" id="post-title" name="post-title" value="{{title}}" />
       </div>
       <div class="form-group">
         <label for="post-cont">content:</label>
         <textarea class="form-input" id="post-cont" name="post-cont" >{{content}}</textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Update</button>
-        <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+        <button type="submit" class="btn btn-primary" data-id="{{id}}">Update</button>
       </div>
     </form>
+    <div  class="delete-post">
+      <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+    </div>
   </div>
 
 </div> 

@@ -1,15 +1,5 @@
 
-/* const newPost = async(event) => {
-  event.preventDefault();
-  
-    document.location.replace('/post')
-  
- 
-} */
-
-
-
-const delButtonHandler = async (event) => {
+const deleButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -20,18 +10,47 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/createpost');
     } else {
-      alert('Failed to delete title');
+      alert('Failed to delete post');
     }
   }
 };
 
 
-/* document
-  .querySelector('.new-post')
-  .addEventListener('click', newPost); */
+
+
+const editButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    const title = document.querySelector('#post-title').value.trim();
+    const content = document.querySelector('#post-cont').value.trim();
+    if (title && content) {
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          id,
+          title,
+          content
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      if (response.ok) {
+        document.location.replace('/createpost');
+      } else {
+        alert('Failed to update post');
+      }
+    }
+  }
+};
 
 
 
-  document
+document
   .querySelector('.post-list')
-  .addEventListener('click', delButtonHandler);  
+  .addEventListener('click', editButtonHandler);
+
+
+document
+  .querySelector('.delete-post')
+  .addEventListener('click', deleButtonHandler);
