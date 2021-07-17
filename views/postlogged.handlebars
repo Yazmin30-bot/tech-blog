@@ -2,7 +2,25 @@
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.username}} </p>
-  <p>
-    <button class="btn btn-primary">Add comment</button>
-  </p>
+  <ul>
+  {{#each comments as |comment| }}
+  <li>
+    <h2 class="btn btn-primary"><a href="/comment/{{comment.id}}">{{comment.text}}</a></h2>
+  
+</li>
+  {{/each}}
+</ul>
+
+{{#if logged_in}}
+  <form class="new-com-form">
+    <div class="form-group">
+      {{!-- <label for="exampleFormControlTextarea1"></label> --}}
+      <textarea class="form-control" id="com-text" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add comment</button>
+  </form>
+
 </div>
+
+<script src="/js/createcom.js"></script>
+{{/if}}

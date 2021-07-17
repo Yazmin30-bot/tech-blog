@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/createpost');
     } else {
-      alert('Failed to create title');
+      alert('Failed to create post');
     }
   }
 };

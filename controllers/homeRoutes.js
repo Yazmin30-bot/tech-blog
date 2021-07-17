@@ -56,15 +56,47 @@ router.get('/post/:id', withAuth, async (req, res) => {
 });
 
 
-router.get('/post-comment/:id', withAuth, async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
+    const comData = await Comment.findByPk(req.params.id, {
       include: [
+        
         {
           model: User,
           attributes: ['username'],
         },
       ],
+    });
+
+    const comment = comData.get({ plain: true });
+
+    res.render('editcom', {
+      ...comment,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/post-comment/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+ 
+     include: [{
+        model: Comment,
+        attributes: ['id', 'text', 'post_id', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+      ]
     });
 
     const post = postData.get({ plain: true });
