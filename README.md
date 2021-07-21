@@ -70,7 +70,7 @@
     npm start
     ```
   * The following animation demonstrates the application functionality.  
-   ![Gif.](./Assets/gif/wt.gif) 
+   ![Gif.](./Assets/gif.gif) 
 
   * If you have and error, make sure that the following info are correct with your own data on the .env file
       ```bash
@@ -98,10 +98,21 @@
   * [Sequelize](https://sequelize.org//) - `Sequelize`
   * [Express](http://expressjs.com/) - `Express`
   * [Dotenv](https://github.com/motdotla/dotenv#readme/) - `Dotenv`
+  * [Bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme/) - `Bcrypt`
+  * [Connect Session Sequelize](https://github.com/mweibel/connect-session-sequelize/) - `Connect Session Sequelize`
+  * [Express Handlebars](https://github.com/express-handlebars/express-handlebars/) - `Express Handlebars`
+  * [Express Session](https://github.com/expressjs/session#readme/) - `Express Session`
+
+
+  
+
+  
+
+  
 
 ## Links
   * The URL of the deployed application.
-  [https://invulnerable-baguette-18839.herokuapp.com/](https://invulnerable-baguette-18839.herokuapp.com/)
+  [https://secret-waters-30875.herokuapp.com/](https://secret-waters-30875.herokuapp.com/)
   * The URL of the GitHub repository.                                         [https://github.com/Yazmin30-bot/tech-blog/](https://github.com/Yazmin30-bot/tech-blog/)
 
 ## Author 
