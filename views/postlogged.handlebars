@@ -1,11 +1,12 @@
 <div class="text-center">
   <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Created by {{user.username}} on {{format_date date_created}} </p>
+  <h4>{{content}}</h4>
+  <span>Created by {{user.username}} on {{format_date date_created}} </span>
+  <h2>Comments</h2>
   <ul>
   {{#each comments as |comment| }}
   <li>
-    <h2 class="btn btn-primary"><a href="/comment/{{comment.id}}">{{comment.text}} Create by {{comment.user.username}} on {{format_date comment.date_created}}</a></h2>
+    <h1 class="btn btn-primary"><a href="/comment/{{comment.id}}">{{comment.text}}<span> Create by {{comment.user.username}} on {{format_date comment.date_created}}</span></a></h1>
   
 </li>
   {{/each}}

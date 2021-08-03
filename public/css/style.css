@@ -1,10 +1,10 @@
 :root {
-    --primary: #389393;
-    --secondary: #264653;
-    --tertiary: #fa7f72;
-    --quatrinary: #6c6b67;
-    --light: #ebebeb;
-    --dark: #182c23;
+    --primary: #ebebeb;
+    --secondary: #d5896f;
+    --tertiary: #dab785;
+    --quatrinary: #031d44;
+    --light: #70a288;
+    --dark: #04395e;
     --error: rgb(228, 46, 1);
     --border-radius: 0.3rem;
   }
@@ -214,3 +214,14 @@
     display: grid;
     grid-template-rows: max-content 200px 1fr;
 }
+
+
+.dropdown-item{
+  color: #d9e9e8;
+}
+
+.login{
+  width: 60%;
+  border: 5px solid #d9e9e8;
+}
+
