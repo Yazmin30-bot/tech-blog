@@ -226,9 +226,13 @@
 }
 
 
-.card {
+.cardpost {
   height: 15rem;
   width: 15rem;
   color : black;
 }
+
+/* .cardpost2{
+  max-width: fit-content;
+} */
 

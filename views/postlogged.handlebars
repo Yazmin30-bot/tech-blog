@@ -1,25 +1,55 @@
 <div class="text-center">
-  <h2>{{title}}</h2>
-  <h4>{{content}}</h4>
-  <span>Created by {{user.username}} on {{format_date date_created}} </span>
-  <h2>Comments</h2>
-  <ul>
-  {{#each comments as |comment| }}
-  <li>
-    <h1 class="btn btn-primary"><a href="/comment/{{comment.id}}">{{comment.text}}<span> Create by {{comment.user.username}} on {{format_date comment.date_created}}</span></a></h1>
+
+<div class="card text-center">
+  <div class="card-header">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{{content}}</h3>
+   {{!--  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+   
+    <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+    
+  </div>
+  <div class="card-footer text-muted">
+    {{user.username}} on {{format_date date_created}}
+  </div>
+</div>
   
-</li>
-  {{/each}}
-</ul>
+  <h2>Comments</h2>
+  <button type="submit" class="btn btn-primary">Add comment +</button>
+  {{!-- <ul> --}}
+  <div class="d-flex align-content-between flex-wrap">
+    <div class="row p-l-5">
+      {{#each comments as |comment| }}
+
+              <div class="col">
+            <div class="card cardpost">
+                <div class="card-body">
+                    <h5 class="card-title">{{comment.text}}</h5>
+                    <p class="card-text">Create by {{comment.user.username}} on {{format_date comment.date_created}}</p>
+                    <a href="/comment/{{comment.id}}" class="btn btn-primary"><span>Click to update or delete</span></a>
+                </div>
+            </div>
+        </div>
+        {{!-- <li>
+          <h1 class="btn btn-primary"><a href="/comment/{{comment.id}}">{{comment.text}}<span> Create by
+          {{comment.user.username}} on {{format_date comment.date_created}}</span></a></h1>
+        </li> --}}
+      {{/each}}
+                {{!--
+            </ul> --}}
+  </div>
+</div>
 
 {{#if logged_in}}
-  <form class="new-com-form">
-    <div class="form-group">
-      {{!-- <label for="exampleFormControlTextarea1"></label> --}}
-      <textarea class="form-control" id="com-text" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Add comment</button>
-  </form>
+<form class="new-com-form">
+  <div class="form-group">
+    {{!-- <label for="exampleFormControlTextarea1"></label> --}}
+    <textarea class="form-control" id="com-text" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add comment</button>
+</form>
 
 </div>
 
