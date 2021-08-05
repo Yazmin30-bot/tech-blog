@@ -408,6 +408,7 @@
   dl {
     margin-top: 0;
     margin-bottom: 1rem;
+    list-style-type:none;
   }
   
   label {
@@ -1146,7 +1147,7 @@
   form .form-input {
     width: 100%;
     padding: 0.75rem;
-    color: #ffffff;
+    color: #484848;
     background-color: #ffffff;
     margin: 0.625rem 0;
     font-size: 1.2rem;

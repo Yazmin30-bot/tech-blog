@@ -1,13 +1,17 @@
 <!-- Loop over each object in the projects array style="height: 10rem;"-->
 
-
-
- {{#each posts as |post| }}
-<div class="btn btn-primary">
-  
-    <h2><a href="/post-comment/{{post.id}}">{{post.title}} created by {{post.user.username}} on {{format_date post.date_created}}</a></h2>
-  
+<div class="d-flex align-content-between flex-wrap">
+    <div class="row p-3">
+        {{#each posts as |post| }}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+                    <a href="/post-comment/{{post.id}}" class="btn btn-primary">Click to more info</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </div>
-{{/each}}
-  
-

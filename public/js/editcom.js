@@ -1,4 +1,19 @@
 
+
+/* ( function ( document, Handlebars ) {
+    
+  "use strict";
+  Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+ */
+ 
+ /*  document.querySelector( '#handlebars_result' ).innerHTML = template( data );  
+} ( document, Handlebars ) ); */
+
 const deleButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -14,9 +29,6 @@ const deleButtonHandler = async (event) => {
     }
   }
 };
-
-
-
 
 const editButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {

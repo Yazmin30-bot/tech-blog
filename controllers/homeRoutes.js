@@ -64,16 +64,26 @@ router.get('/comment/:id', withAuth, async (req, res) => {
         {
           model: User,
           attributes: ['username'],
+          
         },
+        
       ],
     });
 
     const comment = comData.get({ plain: true });
+   /*  console.log(comment.user_id===req.session.user_id);
+    console.log(comment.user_id);
+    console.log(req.session.user_id); */
 
     res.render('editcom', {
       ...comment,
-      logged_in: req.session.logged_in
-    });
+      isLogged_in:comment.user_id===req.session.user_id,
+      logged_in: req.session.logged_in,
+      logged_user_id:req.session.user_id
+    }); 
+   /*  console.log(res); */
+    /* console.log(req.session.user_id); 
+    console.log(comData.user_id); */
   } catch (err) {
     res.status(500).json(err);
   }

@@ -225,3 +225,10 @@
   border: 5px solid #d9e9e8;
 }
 
+
+.card {
+  height: 15rem;
+  width: 15rem;
+  color : black;
+}
+
